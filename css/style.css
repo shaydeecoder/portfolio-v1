@@ -1,0 +1,324 @@
+/* CSS Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* General CSS */
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body {
+    font-family: "Roboto Condensed";
+    margin: 0;
+    padding: 0;
+}
+
+p {
+  color: #64707b;
+}
+
+h3 {
+  color: #41464b;
+  text-transform: uppercase;
+}
+
+
+/*===============================================
+               Utility Classes
+=================================================*/
+
+/* Parallax (Generic) */
+.bg-parallax {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Buttons (Generic) */
+.btn-general {
+  border-width: 2px;
+  border-radius: 0;
+  padding: 12px 26px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.btn-white {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+  background-color: #fff;
+  color: #41464b;
+}
+
+.btn-red {
+  border-color: #d00000;
+  color: #d00000;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+  background-color: #d00000;
+  color: #fff;
+}
+
+
+/* Navigation Bar */
+
+header .container-fluid {
+  padding: 0;
+}
+
+.navbar {
+  padding: 10px 85px;
+  transition: all .5s ease-in-out;
+}
+
+.sc-top-nav {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-nav > li {
+  padding: 0 15px;
+}
+
+
+/* Section: Home */
+
+#home {
+  background: url('../img/hero2.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+}
+
+#home .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+}
+
+#home .container {
+  padding: 19rem 0 7rem 0;
+  text-align: left;
+}
+
+#home .col h1 {
+  font-size: 2rem;
+}
+
+#home .col h2 {
+  font-size: 4rem;
+}
+
+#home .bg-red {
+  background: #d00000;
+  color: #f7fff7;
+}
+
+
+/* Content Generic */
+
+.content-box {
+  padding: 60px 0;
+}
+
+.content-title h3 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.content-title-underline {
+  width: 30px;
+  height: 3px;
+  background: #d00000;
+  margin: 0 auto 30px auto;
+}
+
+
+/* Section: Services */
+
+.service-item {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.service-item-icon i {
+  color: #d00000;
+  padding: 10px;
+  margin-right: 25px;
+  width: 75px;
+  height: 70px;
+  text-align: center;
+}
+
+.service-item:hover .service-item-icon i {
+  color: #fff;
+  background: #d00000;
+}
+
+.service-item-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+
+/* Section: About */
+
+#about .container {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 6rem;
+}
+
+#about .row {
+  height: 400px;
+}
+
+#about .row > div {
+  min-height: 100%;
+}
+
+.about-desc {
+  padding: 3rem 6rem;
+}
+
+.about-btn {
+  margin-top: 2rem;
+}
+
+.about-img {
+  background: url("../img/bg-about.jpg") no-repeat center center/cover;
+}
+
+
+/*===============================================
+               Social Buttons
+===============================================*/
+
+.social-list {
+  padding-left: 0;
+}
+
+.social-list li {
+  list-style: none;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  margin-top: 10px;
+}
+
+.social-icon i {
+  font-size: 17px;
+}
+
+.icon-gray i {
+  color: #64707b;
+}
+
+.icon-white i {
+  color: #fff;
+}
+
+.social-icon i:hover {
+  color: #d00000;
+}
+
+
+/* Section: Contact */
+
+footer {
+  background-color: #41464b;
+  padding-top: 30px;
+  border-top: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-left h3, .contact-right h3 {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.contact-left p {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  background-image: url("../img/world-map.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+address {
+  color: #fff;
+}
+
+address strong, .phone-email strong {
+  letter-spacing: 1px;
+}
+
+form .form-control {
+  background: transparent;
+  border-radius: 0;
+  border-color: #fff;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+#loaders {
+  text-align: center;
+}
+
+#loaders img {
+  margin: 0 auto;
+  display: none;
+}
+
+
+/* Footer */
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer-copyrights p {
+  margin: 0;
+  color: #fff;
+}
+
+
+/*===============================================
+               Animations
+===============================================*/
+
+#home, #home .container .zoomIn {
+  animation-duration: .5s;
+}
+
+#home {
+  animation-delay: .1s;
+}
+
+#home .container .zoomIn {
+  animation-delay: .5s;
+}

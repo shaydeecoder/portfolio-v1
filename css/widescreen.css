@@ -1,0 +1,35 @@
+/* Section: About */
+@media(max-width: 991px) {
+  #about p {
+    color: #fff;
+  }
+  
+  #about h3 {
+    color: #fff;
+  }
+
+  .about-img {
+    display: none;
+  }
+
+  #about .container {
+    background: url("../img/hero1.jpg") no-repeat center center/cover;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+
+  /* Utility Classes */
+  .btn-red-fill {
+    background-color: #d00000bb;
+    color: #fff;
+  }
+
+  .btn-red-fill:hover, 
+  .btn-red-fill:focus {
+    background-color: #d00000;
+    color: #fff;
+  }
+}

@@ -1,0 +1,44 @@
+/* Navigation Bar */
+
+.navbar {
+  padding: 10px 20px;
+}
+
+
+/* Section: Home */
+
+#home .container {
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#home .col h1 { font-size: 1.5rem; }
+
+#home .col h2 { font-size: 3rem; }
+
+
+/* Section: Services */
+
+.service-item { margin-bottom: 0; }
+
+
+/* Section: About */
+
+#about {
+  text-align: center;
+}
+
+.about-img {
+display: none;
+}
+
+#about .container {
+  box-shadow: none;
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+.about-desc {
+  padding: 4rem 2rem;
+}
