@@ -52,8 +52,8 @@ $(function(){
 const fullName = document.getElementById('full-name'),
       email = document.getElementById('email'),
       message = document.getElementById('message'),
-      sendBtn = document.getElementsByClassName('send-btn'),
-      sendEmailForm = document.getElementsById('email-form');
+      sendBtn = document.querySelector('.send-btn #send-btn'),
+      sendEmailForm = document.getElementById('email-form');
 
 
 // Event Listeners
@@ -61,10 +61,10 @@ const fullName = document.getElementById('full-name'),
 eventListerners();
 
 function eventListerners() {
-  // validating the forms
-  // fullName.addEventListener('blur' validateField);
-  // email.addEventListener('blur' validateField);
-  // message.addEventListener('blur' validateField);
+  // validate the form
+  fullName.addEventListener('blur', validateField);
+  email.addEventListener('blur', validateField);
+  message.addEventListener('blur', validateField);
 
   // send email
   sendEmailForm.addEventListener('submit', sendEmail);
@@ -72,32 +72,73 @@ function eventListerners() {
 
 
 // Function
+
+// 
 function sendEmail(e) {
   e.preventDefault();
 
-  // show the spinner
-  const spinner = document.querySelector('.spinner');
+  // show the spinnwer
+  const spinner = document.querySelector('#loaders .spinner');
   spinner.style.display = 'block';
+
+  // create an element for the sent email image
+  const sentEmailImg = document.createElement('img');
+  sentEmailImg.src = 'img/loaders/mail.svg';
+  sentEmailImg.style.display = 'block';
+  sentEmailImg.style.width = '150px';
+  sentEmailImg.style.marginBottom = '10px';
+
+  // hide spinner, then display the sent email image
+  setTimeout(function() {
+    // hide the spinner
+    spinner.style.display = 'none';
+
+    // show the sent email image
+    document.querySelector('#loaders').appendChild(sentEmailImg);
+
+    // hide the image after 5 secs and reset form
+    setTimeout(function() {
+      sendEmailForm.reset();
+      sentEmailImg.remove();
+    }, 2000);
+  }, 3000);
 }
 
-
-/*
-// validating the fields
+// validate the form field
 function validateField() {
   let errors;
 
-  // validating the length of the fields
+  // validate the length of the field
   validateLength(this);
+
+  // valiadte the email field
+  if(this.type === 'email') {
+    validateEmail(this);
+  }
 }
 
-// function for validating the length of the fields
+// validate the length of the fields
 function validateLength(field) {
   if(field.value.length > 0) {
-    field.style.borderColor = 'green';
-    field.classList.add('error');
+    field.style.borderColor = 'white';
+    field.classList.remove('error');
   } else {
     field.style.borderColor = 'red';
     field.classList.add('error');
   }
 }
-*/
+
+// validate email, checks for @ in the field
+function validateEmail(field) {
+  let emailText = field.value;
+
+  // check if the text conatians the @ sign
+  if(emailText.indexOf('@') !== -1) {
+    field.style.borderColor = 'white';
+    field.classList.remove('error');
+  } else {
+    field.style.borderColor = 'red';
+    field.classList.add('error');
+  }
+}
+

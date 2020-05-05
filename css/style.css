@@ -98,7 +98,6 @@ header .container-fluid {
   background: url('../img/hero2.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   color: #fff;
-  min-height: 100vh;
 }
 
 #home .hero-overlay {
@@ -107,8 +106,9 @@ header .container-fluid {
 }
 
 #home .container {
-  padding: 19rem 0 7rem 0;
-  text-align: left;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 #home .col h1 {
@@ -185,7 +185,7 @@ header .container-fluid {
 }
 
 #about .row {
-  height: 400px;
+  min-height: 320px;
 }
 
 #about .row > div {
@@ -202,6 +202,16 @@ header .container-fluid {
 
 .about-img {
   background: url("../img/bg-about.jpg") no-repeat center center/cover;
+}
+
+.about-img-sm {
+  margin: 0 auto 30px;
+  background: url(../img/bg-about.jpg) no-repeat center center/cover;
+  width: 170px;
+  height: 170px;
+  border: 2px solid white;
+  border-radius: 35%;
+  display: none;
 }
 
 

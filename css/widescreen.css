@@ -12,6 +12,10 @@
     display: none;
   }
 
+  .about-img-sm {
+    display: block;
+  }
+
   #about .container {
     background: url("../img/hero1.jpg") no-repeat center center/cover;
   }

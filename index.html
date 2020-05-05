@@ -2,9 +2,10 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
   <meta name="description" content="I'm a design-minded front-end developer focused on building  exceptional, high-quality, beautiful interfaces & experiences.">
+
   <meta name="keywords" content="Web Design, Web Development, Responsive Design, Modern Design, E-Commerce Solutions, eCommerce Solution, Business Websites, Graphics Design">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +24,12 @@
   <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="css/fontawesome/css/all.css">
+  <script src="https://kit.fontawesome.com/fc9346f24c.js" crossorigin="anonymous"></script>
 
   <!-- Animation CSS (animate.css) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-  <title>Shaydee Coder</title>
+  <title>S H A Y D E E C O D E R - Web Development & Graphics Design</title>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="120">
@@ -161,9 +162,10 @@
           <h3>ABOUT ME</h3>
           <div class="content-title-underline"></div>
         </div>
+        <div class="about-img-sm"></div>
         <div class="about-desc-content wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
           <p>
-            I'm a design-minded front-end developer
+            I am Abba Shadrach, I'm a design-minded front-end developer
             focused on building  exceptional, high-quality,
             beautiful interfaces & experiences.
 
@@ -171,11 +173,12 @@
             user experiences with clean, efficient, and scalable code.
           </p>
         </div>
+<!--
         <div class="about-btn wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
           <a href="#portfolio" class="btn btn-lg btn-general btn-red btn-red-fill" role="button">My Portfolio</a>
         </div>
+-->
       </div>
-
       <div class="about-img col-lg-5"></div>
     </div>
   </div>
@@ -216,20 +219,19 @@
         <div class="col-md-6">
           <div class="contact-right">
             <h3>Contact Me</h3>
-            <form action="#" class="contact-form" id="email-form">
+            <form action="process.php" method="POST" class="contact-form" id="email-form">
               <div>
                 <input type="text" name="full-name" placeholder="Full Name" class="form-control" id="full-name" required>
                 <input type="email" name="email" placeholder="Email" class="form-control" id="email" required>
                 <textarea rows="5" name="message" placeholder="Message..." class="form-control" id="message" required></textarea>
               </div>
 
-              <div class="" id="loaders">
-                <img class="sent" src="img/loaders/mail.svg" width="180">
+              <div id="loaders">
                 <img class="spinner" src="img/loaders/spinner.gif" width="150">
               </div>
 
               <div class="send-btn">
-                <a class="btn btn-lg btn-general btn-white" href="#" role="button">SEND</a>
+                <button id="send-btn" class="btn btn-lg btn-general btn-white" type="submit">SEND</button>
               </div>
             </form>
           </div>
@@ -242,7 +244,7 @@
     <div class="container">
       <div class="footer-copyrights">
         <p class="text-center">
-          &copy; 2020 ShaydeeCoder, All Rights Reserved - Designed & Built by ShaydeeCoder.
+          &copy; 2020 ShaydeeCoder, All Rights Reserved - Designed & Built with 💖 by ShaydeeCoder. 
         </p>
       </div>
     </div>
