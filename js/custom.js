@@ -67,13 +67,51 @@ function eventListerners() {
   message.addEventListener('blur', validateField);
 
   // send email
-  sendEmailForm.addEventListener('submit', sendEmail);
+  //sendEmailForm.addEventListener('submit', sendEmail);
 }
 
 
 // Function
 
-// 
+//
+
+$(function(){
+	const sendEmailForm = $('#email-form');
+	sendEmailForm.on('submit', function(e) {
+		e.preventDefault();
+		
+		const spinner = document.querySelector('#loaders .spinner');
+		spinner.style.display = 'block';
+
+	  // create an element for the sent email image
+	  const sentEmailImg = document.createElement('img');
+	  sentEmailImg.src = 'img/loaders/mail.svg';
+	  sentEmailImg.style.display = 'block';
+	  sentEmailImg.style.width = '150px';
+	  sentEmailImg.style.marginBottom = '10px';
+	})
+	
+	$.ajax({
+		url: "demo_test.txt",
+		data: {fullName: fullName, email: email, message: message},
+		success: function(result){
+			// hide the spinner
+			spinner.style.display = 'none';
+
+			// show the sent email image
+			document.querySelector('#loaders').appendChild(sentEmailImg);
+			
+			setTimeout(function() {
+			  sendEmailForm.reset();
+			  sentEmailImg.remove();
+			}, 2000);
+			
+			//console.log(result);
+		}
+  });
+
+});
+ 
 function sendEmail(e) {
   e.preventDefault();
 
@@ -82,11 +120,12 @@ function sendEmail(e) {
   spinner.style.display = 'block';
 
   // create an element for the sent email image
-  const sentEmailImg = document.createElement('img');
+  /*const sentEmailImg = document.createElement('img');
   sentEmailImg.src = 'img/loaders/mail.svg';
   sentEmailImg.style.display = 'block';
   sentEmailImg.style.width = '150px';
   sentEmailImg.style.marginBottom = '10px';
+  */
 
   // hide spinner, then display the sent email image
   setTimeout(function() {
