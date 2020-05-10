@@ -77,41 +77,46 @@ function eventListerners() {
 
 $(function(){
 	const sendEmailForm = $('#email-form');
+	
+	let spinner = $('#loaders .spinner');
+	let sentSpinner = $('#loaders .sentSpinner');
 	sendEmailForm.on('submit', function(e) {
 		e.preventDefault();
 		
-		const spinner = document.querySelector('#loaders .spinner');
-		spinner.style.display = 'block';
-
-	  // create an element for the sent email image
-	  const sentEmailImg = document.createElement('img');
-	  sentEmailImg.src = 'img/loaders/mail.svg';
-	  sentEmailImg.style.display = 'block';
-	  sentEmailImg.style.width = '150px';
-	  sentEmailImg.style.marginBottom = '10px';
-	})
-	
-	$.ajax({
-		url: "demo_test.txt",
+		let fullName = $('#full-name').val();
+		let email = $('#email').val();
+		let message = $('#message').val();
+		
+		spinner.show();
+	 
+	  $.ajax({
+		url: "process.php",
+		type: "post",
 		data: {fullName: fullName, email: email, message: message},
 		success: function(result){
+			console.log(result)
 			// hide the spinner
-			spinner.style.display = 'none';
+			spinner.hide();
 
 			// show the sent email image
-			document.querySelector('#loaders').appendChild(sentEmailImg);
+			sentSpinner.show();
 			
 			setTimeout(function() {
-			  sendEmailForm.reset();
-			  sentEmailImg.remove();
-			}, 2000);
-			
-			//console.log(result);
-		}
+			  //sendEmailForm.reset();
+			  //sentEmailImg.remove();
+			  //sentEmailImg.style.display = 'block';
+			  sentSpinner.fadeOut();
+			  sendEmailForm.trigger("reset");
+			}, 5000);
+					}
   });
+	})
+	
+	
 
 });
- 
+
+/* 
 function sendEmail(e) {
   e.preventDefault();
 
@@ -128,20 +133,20 @@ function sendEmail(e) {
   */
 
   // hide spinner, then display the sent email image
-  setTimeout(function() {
+  //setTimeout(function() {
     // hide the spinner
-    spinner.style.display = 'none';
+   // spinner.style.display = 'none';
 
     // show the sent email image
-    document.querySelector('#loaders').appendChild(sentEmailImg);
+   // document.querySelector('#loaders').appendChild(sentEmailImg);
 
     // hide the image after 5 secs and reset form
-    setTimeout(function() {
-      sendEmailForm.reset();
-      sentEmailImg.remove();
-    }, 2000);
-  }, 3000);
-}
+    //setTimeout(function() {
+    //  sendEmailForm.reset();
+    //  sentEmailImg.remove();
+   // }, 2000);
+  //}, 3000);
+//}
 
 // validate the form field
 function validateField() {
